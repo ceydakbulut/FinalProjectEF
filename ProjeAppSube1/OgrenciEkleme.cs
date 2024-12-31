@@ -116,7 +116,7 @@ namespace ProjeAppSube1
             {
                 var ogrenci = context.Ogrenciler.FirstOrDefault(o => o.Numara == Numara);
 
-                if (ogrenci != null)
+                if (ogrenci != null) //(boþ deðilse)" anlamýna gelir.
                 {
                     ogrenci.Ad = txtAd.Text;
                     ogrenci.Soyad = txtSoyad.Text;

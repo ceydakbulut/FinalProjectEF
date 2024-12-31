@@ -29,6 +29,26 @@ namespace ProjeAppSube1
             modelBuilder.Entity<OgrenciDers>().HasKey(od => new { od.OgrenciID, od.DersID });//birden fazla alanın birleşiminden oluşuyor: OgrenciID ve DersID.haskey primarykey
             modelBuilder.Entity<Ders>().HasKey(d => d.DersID); //her dersin benzersiz bir şekilde tanımlanmasını sağlar.
             modelBuilder.Entity<Sinif>().HasKey(s => s.SinifId);//amaç Her sınıfın adı benzersizdir ve bu alan sınıfları ayırt etmek için kullanılır.
+
+            modelBuilder.Entity<Ogrenci>()
+                .HasOne(i => i.Sinif)
+                .WithMany(i => i.Ogrenci)
+                .HasForeignKey(i => i.SinifId);
+
+
+            modelBuilder.Entity<OgrenciDers>()
+               .HasOne(a => a.Ders)
+               .WithMany(a => a.OgrenciDers)
+               .HasForeignKey(a => a.DersId);
+
+
+            modelBuilder.Entity<OgrenciDers>()
+             .HasOne(a => a.Ogrenci)
+             .WithMany(a => a.OgrenciDers)
+             .HasForeignKey(a => a.OgrenciID);
+
+
+
         }
     }
 }

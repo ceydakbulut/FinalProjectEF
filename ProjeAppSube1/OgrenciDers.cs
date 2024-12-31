@@ -14,5 +14,7 @@ namespace ProjeAppSube1
         public Ogrenci Ogrenci { get; set; } 
         public int DersID { get; set; }
         public Ders Dersler { get; set; }
+        
+        
     }
 }
