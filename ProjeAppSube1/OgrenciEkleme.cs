@@ -7,7 +7,6 @@ namespace ProjeAppSube1
 
     public partial class OgrenciEkleme : Form
     {
-        Ogrenci? ogr;
         private AppDbContext dbcontext;
 
         public OgrenciEkleme()
